@@ -12,7 +12,6 @@ export class TaskService {
     task1.dueDate = '2023-01-01';
     task1.status = 'NOT STARTED';
     this.tasks.push(task1);
-    return this.tasks
-
+    return this.tasks;
   }
 }
