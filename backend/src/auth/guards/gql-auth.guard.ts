@@ -7,7 +7,7 @@ export class GqlAuthGuard extends AuthGuard('local') {
     super();
   }
 
-  getRequest(context: ExecutionContext)  {
+  getRequest(context: ExecutionContext) {
     const ctx = GqlExecutionContext.create(context);
     const request = ctx.getContext();
     request.body = ctx.getArgs().signInInput;
