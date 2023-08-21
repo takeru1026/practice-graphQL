@@ -13,9 +13,6 @@ import { AuthModule } from './auth/auth.module';
       driver: ApolloDriver,
       playground: true,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-      cors: {
-        origin: '*',
-      },
     }),
     TaskModule,
     PrismaModule,
