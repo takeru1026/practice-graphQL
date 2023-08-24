@@ -1,7 +1,20 @@
+import jwtDecode from 'jwt-decode';
 import Header from './Header';
 import TaskTable from './TaskTable';
+import { Payload } from '../types/payload';
+import { useQuery } from '@apollo/client';
+import { Task } from '../types/task';
+import { GET_TASKS } from '../queries/taskQueries';
 
 const Main = () => {
+	const token = localStorage.getItem('token');
+	if (!token) return;
+	const decodedToken = jwtDecode<Payload>(token);
+	const userId = decodedToken.sub;
+
+	const { _loading, data, _error} = useQuery<{getTasks: Task[]}(GET_TASKS, variables: {userId});
+	console.log(data);
+
 	return (
 		<>
 			<Header />
