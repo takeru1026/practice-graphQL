@@ -12,7 +12,9 @@ const Main = () => {
 	const decodedToken = jwtDecode<Payload>(token);
 	const userId = decodedToken.sub;
 
-	const { _loading, data, _error} = useQuery<{getTasks: Task[]}(GET_TASKS, variables: {userId});
+	const { loading, data, error } = useQuery<{ getTasks: Task[] }>(GET_TASKS, {
+		variables: { userId },
+	});
 	console.log(data);
 
 	return (
