@@ -8,6 +8,8 @@ import { UpdateTaskInput } from './dto/updateTask.input';
 export class TaskService {
   constructor(private readonly prismaService: PrismaService) {}
   async getTasks(userId: number): Promise<Task[]> {
+    console.log('test');
+
     return await this.prismaService.task.findMany({
       where: {
         userId,

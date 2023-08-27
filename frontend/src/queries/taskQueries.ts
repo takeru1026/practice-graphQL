@@ -6,6 +6,7 @@ export const GET_TASKS = gql`
 			Id
 			name
 			dueDate
+			status
 			description
 		}
 	}
