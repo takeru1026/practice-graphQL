@@ -34,7 +34,6 @@ export default function SignIn() {
 				localStorage.setItem('token', result.data.signIn.accessToken);
 			}
 			localStorage.getItem('token') && navigate('/');
-			console.log(result);
 		} catch (error: any) {
 			if (error.message === 'Unauthorized') {
 				setFailSignIn(true);

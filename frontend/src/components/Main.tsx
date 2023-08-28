@@ -14,8 +14,12 @@ const Main = () => {
 	const userId = decodedToken.sub;
 
 	const { loading, data, error } = useQuery<{ getTasks: Task[] }>(GET_TASKS, {
-		variables: { userId },
+		variables: { userId: userId },
 	});
+
+	// error時は以下のように出力するといい
+	// console.log(JSON.stringify(error, null, 2));
+	// https://stackoverflow.com/questions/48863441/apollo-client-how-to-simply-debug-a-400-code-error
 
 	return (
 		<>
